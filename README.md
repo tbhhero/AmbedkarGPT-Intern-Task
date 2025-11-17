@@ -3,7 +3,7 @@
 Local command-line RAG system using LangChain, ChromaDB, HuggingFace embeddings, and Ollama (mistral).
 
 Requirements
-- Python 3.11
+- Python 3.8+
 - Ollama installed and running locally
 
 Dependencies
