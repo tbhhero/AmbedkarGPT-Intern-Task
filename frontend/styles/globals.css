@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+
+/* Background and theme */
+
+/* Dark-only theme (forced) */
+body {
+  @apply bg-gradient-to-br from-slate-950 via-slate-900 to-zinc-900 text-slate-100 antialiased;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* App container */
+.container {
+  @apply max-w-5xl mx-auto px-4;
+}
+
+/* Card */
+.card {
+  @apply bg-gradient-to-br from-slate-800/60 via-slate-900/60 to-slate-950/60 border border-slate-800 rounded-xl shadow-xl p-6 backdrop-blur-sm;
+}
+
+/* Chat styles */
+.chat-window {
+  height: 70vh;
+  @apply rounded-2xl p-4 overflow-auto;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.chat-input {
+  @apply w-full p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-100;
+}
+
+.accent {
+  background: linear-gradient(90deg,#7c3aed,#f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sticky input bar for mobile */
+.sticky-input {
+  position: sticky;
+  bottom: 0;
+  background: transparent;
+  padding-top: 8px;
+}
+
+/* ChatGPT-like centered layout */
+.app-shell {
+  display: grid;
+  grid-template-columns: 0 1fr;
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 96px);
+}
+
+.input-bar {
+  @apply flex gap-2 items-center p-3 bg-transparent border-t border-slate-800;
+}
+
+.send-btn {
+  @apply px-4 py-2 rounded-full text-white shadow-lg;
+  background: linear-gradient(90deg,#7c3aed,#f472b6);
+}
+
+/* Floating glass effect for small screens */
+.floating-glass {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  width: calc(100% - 48px);
+  max-width: 900px;
+  border-radius: 9999px;
+  padding: 8px;
+  background: rgba(15,23,42,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+
